@@ -24,3 +24,19 @@ Your final amount is $39152.94
 You earned $14152.94 interest
 ```
 '''
+principal = float(input("Enter the Principal: "))
+annual_interest_rate = float(input("Enter the annual interest rate as a percent: "))
+compounding_periods = int(input("Enter the number of compounding periods: "))
+investment_period_years = float(input("How long is the investment period in years: "))
+
+annual_interest_rate_decimal = annual_interest_rate / 100
+
+final_amount = principal * (1 + (annual_interest_rate_decimal / compounding_periods)) ** (compounding_periods * investment_period_years)
+
+interest_earned = final_amount - principal
+
+final_amount = round(final_amount, 2)
+interest_earned = round(interest_earned, 2)
+
+print(f"Your final amount is ${final_amount}")
+print(f"You earned ${interest_earned} interest")

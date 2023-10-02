@@ -28,3 +28,23 @@ Your half perimeter is 14.5
 The area of your triangle is 29.342
 '''
 
+def calculate_area(a, b, c):
+    # Calculate half of the perimeter
+    s = (a + b + c) / 2
+
+    # Calculate the area using Heron's formula
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+
+    return area
+
+print("I will use Heron's formula to find the area of a triangle provided that all 3 sides are known.")
+print("You will need to enter the lengths of the 3 sides: a, b, and c")
+
+a = float(input("Enter the length of side a: "))
+b = float(input("Enter the length of side b: "))
+c = float(input("Enter the length of side c: "))
+
+triangle_area = calculate_area(a, b, c)
+
+print(f"\nYour half perimeter is {((a + b + c) / 2):.1f}")
+print(f"The area of your triangle is {triangle_area:.3f}")
